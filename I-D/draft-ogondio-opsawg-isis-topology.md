@@ -46,7 +46,7 @@ Topology collection is a critical use case for the network operators because the
 
 Exchanging ISIS information between a service orchestration layer and a SDN controller to create services is desirable. The deployment of L3 services with the Layer 3 VPN Network Model (L3NM) {{!RFC9182}} is more accurate if the SDN controller can export ISIS topological information, so the customer uses the information of the controller instead of getting it from inventory information. 
 
-The main idea of this model is to represent some of the ISIS topology attributes.
+The main idea of this model is to represent most relevant of the ISIS topology attributes.
 
 This document defines a YANG data model for representing, managing and controlling the ISIS topology. The data model augments ietf-network module {{!RFC8345}} by adding the ISIS information.
 
@@ -97,8 +97,8 @@ The set of parameters and augmentations are included just a node level. Each par
 
 * Network-types: Its presence identifies the ISIS topology type. Thus, the network type MUST be isis-topology.
 + ISIS timer attributes: Identifies the node timer attributes configured in the Network-Element. They are LSP lifetime and the LSP refresh interval.
-+ ISIS status: contains the ISIS status attributes (level, area-address and neighbours).
-- Neighbour neighbour is identified by the IP address. Description for troubleshooting purposes.
+- ISIS status: contains the ISIS status attributes (level, area-address and neighbours).
+
 
 The set of parameters and augmentations are included just a termination point level. Each parameter is listed as follows:
 
