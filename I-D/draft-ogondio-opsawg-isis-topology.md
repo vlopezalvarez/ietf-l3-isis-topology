@@ -91,7 +91,7 @@ Please remove this note.
 
 ## YANG Model Overview
 
-The abstract (base) network data model is defined in the "ietf-network" module of {{!RFC8345}}. The ISIS-topology builds on the network data model defined in the "ietf-network" module {{!RFC8345}}, augmenting the nodes with isis information, which anchor the links and are contained in nodes).
+The abstract (base) network data model is defined in the "ietf-network" module of {{!RFC8345}}. The ISIS-topology builds on the network data model defined in the "ietf-network" module {{!RFC8345}}, augmenting the nodes with ISIS information, which anchor the links and are contained in nodes).
 
 The set of parameters and augmentations are included just a node level. Each parameter and description are detailed following:
 
