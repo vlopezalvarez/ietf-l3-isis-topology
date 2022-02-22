@@ -19,12 +19,14 @@ module ietf-l3-isis-topology {
     prefix "inet";
   }
   organization
-    "IETF I2RS (Interface to the Routing System) Working Group";
+    "IETF OPSA (Operations and Management Area) Working Group";
   contact
-    "WG Web:    <https://datatracker.ietf.org/wg/i2rs/>
-     WG List:   <mailto:i2rs@ietf.org>
-     Editor:    
-                <mailto:xxx@clemm.org>";
+    "Editor:    Oscar Gonzalez de Dios
+                 <mailto:oscar.gonzalezdedios@telefonica.com>
+    Editor:   Samier Barguil
+                 <mailto:samier.barguilgiraldo.ext@telefonica.com>
+    Editor:   Victor Lopez
+                 <mailto:victor.lopez@nokia.com>";
   description
     "This module defines a model for Layer 3 isis
      topologies.
