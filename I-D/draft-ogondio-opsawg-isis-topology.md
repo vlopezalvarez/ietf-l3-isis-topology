@@ -93,14 +93,14 @@ Please remove this note.
 
 The abstract (base) network data model is defined in the "ietf-network" module of {{!RFC8345}}. The ISIS-topology builds on the network data model defined in the "ietf-network" module {{!RFC8345}}, augmenting the nodes with ISIS information, which anchor the links and are contained in nodes).
 
-The set of parameters and augmentations are included just a node level. Each parameter and description are detailed following:
+There is a set of parameters and augmentations that are included at the node level. Each parameter and description are detailed following:
 
 * Network-types: Its presence identifies the ISIS topology type. Thus, the network type MUST be isis-topology.
 + ISIS timer attributes: Identifies the node timer attributes configured in the Network-Element. They are LSP lifetime and the LSP refresh interval.
 - ISIS status: contains the ISIS status attributes (level, area-address and neighbours).
 
 
-The set of parameters and augmentations are included just a termination point level. Each parameter is listed as follows:
+There is a second set of parameters and augmentations are included at the termination point level. Each parameter is listed as follows:
 
 * Interface-type
 + Level
