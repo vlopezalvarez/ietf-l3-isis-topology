@@ -1,7 +1,7 @@
 ---
 coding: utf-8
 
-title: A YANG Data Model for Intermediate System to intermediate System (ISIS) topology
+title: A YANG Data Model for Intermediate System to intermediate System (ISIS) Topology
 
 abbrev: ISIS Topology YANG
 docname: draft-ogondio-opsawg-isis-topology-00
@@ -44,9 +44,11 @@ The YANG data model defined in this document conforms to the Network Management 
 
 Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. 
 
-Exchanging ISIS information between a service orchestration layer and a SDN controller to create services is desirable. The deployment of L3 services with the Layer 3 VPN Network Model (L3NM) {{!RFC9182}} is more accurate if the SDN controller can export ISIS topological information, so the customer uses the information of the controller instead of getting it from inventory information. 
+Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programatic itnerface that can allow the planning tools to obtain such information.
 
-The main idea of this model is to represent most relevant of the ISIS topology attributes.
+Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation changed, since network operators can use an API with dyncamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes OSF information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
+
+The main objective of this model is to represent most relevant ISIS topology attributes.
 
 This document defines a YANG data model for representing, managing and controlling the ISIS topology. The data model augments ietf-network module {{!RFC8345}} by adding the ISIS information.
 
