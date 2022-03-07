@@ -44,7 +44,7 @@ The YANG data model defined in this document conforms to the Network Management 
 
 Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. 
 
-Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programatic itnerface that can allow the planning tools to obtain such information.
+Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programmatic itnerface that can allow the planning tools to obtain such information.
 
 Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation changed, since network operators can use an API with dyncamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes OSF information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
 
@@ -61,10 +61,6 @@ The YANG data model defined in this document conforms to the Network Management 
 This document assumes that the reader is familiar with the contents of {{!RFC8345}}. The document uses terms from those documents.
 
 The terminology for describing YANG data models is found in {{!RFC7950}}, {{!RFC8795}} and {{!RFC8346}}.
-
-Following terms are used for the representation of this data model.
-
-TBD
 
 ## Requirements Language
 
@@ -91,14 +87,12 @@ Please remove this note.
 
 # YANG Data Model for ISIS Topology
 
-## YANG Model Overview
-
 The abstract (base) network data model is defined in the "ietf-network" module of {{!RFC8345}}. The ISIS-topology builds on the network data model defined in the "ietf-network" module {{!RFC8345}}, augmenting the nodes with ISIS information, which anchor the links and are contained in nodes).
 
 There is a set of parameters and augmentations that are included at the node level. Each parameter and description are detailed following:
 
 * Network-types: Its presence identifies the ISIS topology type. Thus, the network type MUST be isis-topology.
-+ ISIS timer attributes: Identifies the node timer attributes configured in the Network-Element. They are LSP lifetime and the LSP refresh interval.
++ ISIS timer attributes: Identifies the node timer attributes configured in the network element. They are LSP lifetime and the LSP refresh interval.
 - ISIS status: contains the ISIS status attributes (level, area-address and neighbours).
 
 
@@ -134,13 +128,7 @@ This module imports types from {{!RFC8343}} and {{!RFC8345}}.
 
 # Security Considerations
 
-    The YANG module specified in this document defines a schema for
-    data that is designed to be accessed via network management
-    protocols such as NETCONF {{!RFC6241}} or RESTCONF 
-    {{!RFC8040}}.  The lowest NETCONF layer is the secure transport
-    layer, and the mandatory-to-implement secure transport is Secure
-    Shell (SSH) {{!RFC6242}}. The lowest RESTCONF layer is HTTPS, and
-    the mandatory-to-implement secure transport is TLS {{!RFC5246}}.
+  The YANG module specified in this document defines a schema for data that is designed to be accessed via network management protocols such as NETCONF {{!RFC6241}} or RESTCONF {{!RFC8040}}.  The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) {{!RFC6242}}. The lowest RESTCONF layer is HTTPS, and the mandatory-to-implement secure transport is TLS {{!RFC5246}}.
 
    The NETCONF access control model {{!RFC6536}} provides the means to restrict access for particular NETCONF or RESTCONF users to a    preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.
 

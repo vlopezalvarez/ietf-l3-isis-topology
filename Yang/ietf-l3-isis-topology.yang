@@ -53,9 +53,10 @@ module ietf-l3-isis-topology {
       "Initial version";
     reference
       "RFC XXXX: A YANG Data Model for Intermediate System to
-       intermediate System (ISIS) Topology"; }
+       intermediate System (ISIS) Topology"; 
+  }
 
-identity inf-type {
+  identity inf-type {
     description
       "Identity for the ISIS interface type.";
   }
@@ -71,6 +72,7 @@ identity inf-type {
     description
       "Identity for the p2mp interface.";
   }
+
   identity p2mp-over-lan {
     base inf-type;
     description
@@ -111,64 +113,63 @@ identity inf-type {
     }
     container isis-status {
       description
-      "";
-    leaf level {
+        "Contains the ISIS status attributes";
+      leaf level {
         type ietf-isis:level;
         default "level-all";
         description
           "ISIS level type";
       }
 
-    leaf-list area-address {
-      type ietf-isis:area-address;
-      description
-        "List of areas supported by the protocol instance.";
-    }
+      leaf-list area-address {
+        type ietf-isis:area-address;
+        description
+          "List of areas supported by the protocol instance.";
+      }
 
-    leaf-list neighbours {
+      leaf-list neighbours {
         type inet:ip-address;
         config false;
         description
           "Topology flags";
       }
-
     }
   }
 
-grouping isis-termination-point-attributes {
+  grouping isis-termination-point-attributes {
     description "ISIS termination point scope attributes";
     container isis-termination-point-attributes {
       description
       "Indicates the termination point from the
-              which the OSPF is configured. A termination
+              which the ISIS is configured. A termination
               point can be a physical port, an interface, etc.";
     leaf interface-type {
-     type identityref {
-            base inf-type ;
-          }
-        description
-            "ISIS interface type.";
+      type identityref {
+        base inf-type ;
+      }
+      description
+        "ISIS interface type.";
     }
 
     leaf level {
-        type ietf-isis:level;
-        default "level-all";
-        description
+      type ietf-isis:level;
+      default "level-all";
+      description
           "ISIS level type";
     }
 
     leaf metric {
-        type uint64;
-        description
-          "ISIS Protocol metric";
+      type uint64;
+      description
+        "ISIS Protocol metric";
     }
     leaf is-passive{
       type boolean;
         description
-            "Interface passive mode";
+          "Interface passive mode";
       }
     }
-    }
+  }
 
   augment "/nw:networks/nw:network/nw:network-types" {
     description
@@ -177,7 +178,7 @@ grouping isis-termination-point-attributes {
   }
   
   augment "/nw:networks/nw:network/nw:node/l3t:l3-node-attributes" {
-    when "/nw:networks/nw:network/nw:network-types/isis:isis-topology" {
+    when "/nw:networks/nw:network/nw:network-types/isisnt:isis-topology" {
       description
         "Augmentation parameters apply only for networks with
         isis topology";
@@ -187,9 +188,8 @@ grouping isis-termination-point-attributes {
     uses isis-node-attributes;
   }
 
-  augment "/nw:networks/nw:network/"
-         + "nt:link/l3t:l3-link-attributes" {
-    when "/nw:networks/nw:network/nw:network-types/isis:isis-topology" {
+  augment "/nw:networks/nw:network/nt:link/l3t:l3-link-attributes" {
+    when "/nw:networks/nw:network/nw:network-types/isisnt:isis-topology" {
       description
         "Augmentation parameters apply only for networks with
         ISIS topology";
@@ -198,9 +198,8 @@ grouping isis-termination-point-attributes {
     uses isis-termination-point-attributes;
   }
 
-  augment "/nw:networks/nw:network/nw:node/"
-         +"nt:termination-point/l3t:l3-termination-point-attributes" {
-    when "/nw:networks/nw:network/nw:network-types/isis:isis-topology" {
+  augment "/nw:networks/nw:network/nw:node/nt:termination-point/l3t:l3-termination-point-attributes" {
+    when "/nw:networks/nw:network/nw:network-types/isisnt:isis-topology" {
       description
         "Augmentation parameters apply only for networks with
         ISIS topology";
@@ -208,5 +207,5 @@ grouping isis-termination-point-attributes {
     description "Augments topology termination point configuration";
     uses isis-termination-point-attributes;
   }
-  
 }
+
