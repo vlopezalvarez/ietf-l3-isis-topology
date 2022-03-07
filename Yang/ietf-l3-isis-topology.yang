@@ -2,7 +2,7 @@ module ietf-l3-isis-topology {
   yang-version 1.1;
   namespace
     "urn:ietf:params:xml:ns:yang:ietf-l3-isis-topology";
-  prefix "isis";
+  prefix "isisnt";
   import ietf-network {
     prefix "nw";
   }
@@ -57,13 +57,13 @@ module ietf-l3-isis-topology {
 
 identity inf-type {
     description
-      "Identity for the isis interface type.";
+      "Identity for the ISIS interface type.";
   }
 
   identity nbma {
     base inf-type;
     description
-      "Identity for the nbma interface.";
+      "Identity for the NBMA interface.";
   }
 
   identity p2mp {
@@ -125,7 +125,7 @@ identity inf-type {
         "List of areas supported by the protocol instance.";
     }
 
-      leaf-list neighbours {
+    leaf-list neighbours {
         type inet:ip-address;
         config false;
         description
@@ -136,16 +136,18 @@ identity inf-type {
   }
 
 grouping isis-termination-point-attributes {
-    description "isis termination point scope attributes";
+    description "ISIS termination point scope attributes";
     container isis-termination-point-attributes {
       description
-      "";
+      "Indicates the termination point from the
+              which the OSPF is configured. A termination
+              point can be a physical port, an interface, etc.";
     leaf interface-type {
      type identityref {
             base inf-type ;
           }
         description
-            "Link isis 2";
+            "ISIS interface type.";
     }
 
     leaf level {
@@ -153,13 +155,12 @@ grouping isis-termination-point-attributes {
         default "level-all";
         description
           "ISIS level type";
-      }
+    }
 
     leaf metric {
         type uint64;
         description
-            "Link isis 2";
-
+          "ISIS Protocol metric";
     }
     leaf is-passive{
       type boolean;
@@ -184,6 +185,17 @@ grouping isis-termination-point-attributes {
     description
         "isis node-level attributes ";
     uses isis-node-attributes;
+  }
+
+  augment "/nw:networks/nw:network/"
+         + "nt:link/l3t:l3-link-attributes" {
+    when "/nw:networks/nw:network/nw:network-types/isis:isis-topology" {
+      description
+        "Augmentation parameters apply only for networks with
+        ISIS topology";
+    }
+    description "Augments topology link configuration";
+    uses isis-termination-point-attributes;
   }
 
   augment "/nw:networks/nw:network/nw:node/"

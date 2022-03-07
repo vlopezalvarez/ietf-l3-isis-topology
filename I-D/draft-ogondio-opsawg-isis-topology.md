@@ -58,7 +58,7 @@ The YANG data model defined in this document conforms to the Network Management 
 
 ## Terminology and Notations 
 
-This document assumes that the reader is familiar with the contents of {{!RFC8345}}, . The document uses terms from those documents.
+This document assumes that the reader is familiar with the contents of {{!RFC8345}}. The document uses terms from those documents.
 
 The terminology for describing YANG data models is found in {{!RFC7950}}, {{!RFC8795}} and {{!RFC8346}}.
 
