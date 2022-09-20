@@ -42,11 +42,9 @@ The YANG data model defined in this document conforms to the Network Management 
 
 # Introduction
 
-Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. 
+Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programmatic interfaces that can allow the planning tools to obtain such information.
 
-Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programmatic itnerface that can allow the planning tools to obtain such information.
-
-Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation changed, since network operators can use an API with dyncamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes OSF information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
+Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation changed, because network operators can use an API with dynamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Open Source Path First (OSPF) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
 
 The main objective of this model is to represent most relevant ISIS topology attributes.
 
@@ -118,7 +116,7 @@ There is a second set of parameters and augmentations are included at the termin
 
 # YANG Model for ISIS topology
 
-This module imports types from {{!RFC8343}} and {{!RFC8345}}.
+This module imports types from {{!RFC8343}} and {{!RFC8345}}. Following the YANG model is presented.
 
 ~~~~
 <CODE BEGINS> file "ietf-l3-isis-topology@2022-03-07.yang"
@@ -130,7 +128,7 @@ This module imports types from {{!RFC8343}} and {{!RFC8345}}.
 
   The YANG module specified in this document defines a schema for data that is designed to be accessed via network management protocols such as NETCONF {{!RFC6241}} or RESTCONF {{!RFC8040}}.  The lowest NETCONF layer is the secure transport layer, and the mandatory-to-implement secure transport is Secure Shell (SSH) {{!RFC6242}}. The lowest RESTCONF layer is HTTPS, and the mandatory-to-implement secure transport is TLS {{!RFC5246}}.
 
-   The NETCONF access control model {{!RFC6536}} provides the means to restrict access for particular NETCONF or RESTCONF users to a    preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.
+   The NETCONF access control model {{!RFC6536}} provides the means to restrict access for particular NETCONF or RESTCONF users to a preconfigured subset of all available NETCONF or RESTCONF protocol operations and content.
 
    There are a number of data nodes defined in this YANG module that are writable/creatable/deletable (i.e., config true, which is the default).  These data nodes may be considered sensitive or vulnerable   in some network environments.  Write operations (e.g., edit-config) to these data nodes without proper protection can have a negative effect on network operations.
 
