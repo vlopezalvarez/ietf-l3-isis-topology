@@ -86,11 +86,11 @@ module ietf-l3-isis-topology {
   }
 
   grouping isis-topology-type {
-    description "Identifies the topology type to be isis.";
+    description "Identifies the topology type to be ISIS.";
     container isis-topology {
-      presence "indicates isis topology";
+      presence "indicates ISIS topology";
       description
-        "The presence of the container node indicates isis
+        "The presence of the container node indicates ISIS
         topology";
     }
   }
