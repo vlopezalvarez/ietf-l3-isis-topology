@@ -109,7 +109,6 @@ module ietf-l3-isis-topology {
         "Contains the ISIS status attributes";
       leaf level {
         type ietf-isis:level;
-        default "level-all";
         description
           "Level of an IS-IS node - can be level-1,
           level-2 or level-all.";
@@ -145,7 +144,6 @@ module ietf-l3-isis-topology {
               point can be a physical port, an interface, etc.";
     leaf interface-type {
       type ietf-isis:interface-type;
-      default "broadcast";
       description
         "Type of adjacency to be established for the interface. This
         dictates the type of hello messages that are used.";
@@ -153,7 +151,6 @@ module ietf-l3-isis-topology {
 
     leaf level {
       type ietf-isis:level;
-      default "level-all";
       description
         "Level of an IS-IS node - can be level-1,
         level-2 or level-all.";
@@ -169,7 +166,6 @@ module ietf-l3-isis-topology {
 
     leaf is-passive{
       type boolean;
-      default "false";
       description
         "Indicates whether the interface is in passive mode (IS-IS
         not running but network is advertised).";
