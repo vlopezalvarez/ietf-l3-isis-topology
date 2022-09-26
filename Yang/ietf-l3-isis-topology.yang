@@ -140,8 +140,9 @@ module ietf-l3-isis-topology {
     container isis-termination-point-attributes {
       description
       "Indicates the termination point from the
-              which the ISIS is configured. A termination
-              point can be a physical port, an interface, etc.";
+      which the ISIS is configured. A termination
+      point can be a physical port, an interface, etc.";
+
     leaf interface-type {
       type ietf-isis:interface-type;
       description
@@ -186,7 +187,7 @@ module ietf-l3-isis-topology {
         isis topology";
     }
     description
-        "isis node-level attributes ";
+      "isis node-level attributes ";
     uses isis-node-attributes;
   }
 
@@ -196,7 +197,8 @@ module ietf-l3-isis-topology {
         "Augmentation parameters apply only for networks with
         ISIS topology";
     }
-    description "Augments topology link configuration";
+    description 
+      "Augments topology link configuration";
     uses isis-termination-point-attributes;
   }
 
@@ -206,7 +208,8 @@ module ietf-l3-isis-topology {
         "Augmentation parameters apply only for networks with
         ISIS topology";
     }
-    description "Augments topology termination point configuration";
+    description 
+      "Augments topology termination point configuration";
     uses isis-termination-point-attributes;
   }
 }
