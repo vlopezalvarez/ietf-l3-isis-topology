@@ -1,10 +1,10 @@
 ---
 coding: utf-8
 
-title: A YANG Data Model for Intermediate System to intermediate System (ISIS) Topology
+title: A YANG Data Model for Intermediate System to Intermediate System (ISIS) Topology
 
 abbrev: ISIS Topology YANG
-docname: draft-ogondio-opsawg-isis-topology-00
+docname: draft-ogondio-opsawg-isis-topology-01
 workgroup: OPSAWG Working Group
 category: std
 ipr: trust200902
@@ -19,8 +19,8 @@ author:
     email: oscar.gonzalezdedios@telefonica.com
   -
     name: Samier Barguil Giraldo
-    org: Telefonica
-    email: samier.barguilgiraldo.ext@telefonica.com
+    org: Nokia 
+    email: samier.barguil_giraldo@nokia.com
 
   -
     name: Victor Lopez
@@ -33,7 +33,7 @@ author:
 
 --- abstract
 
-This document defines a YANG data model for representing an abstract view of the provider network topology that contains Intermediate System to intermediate System (ISIS)  information. This document augments the 'ietf-network' data model by adding ISIS concepts. 
+This document defines a YANG data model for representing an abstract view of the provider network topology that contains Intermediate System to Intermediate System (ISIS)  information. This document augments the 'ietf-network' data model by adding ISIS concepts. 
 
 The YANG data model defined in this document conforms to the Network Management Datastore Architecture (NMDA).
 
@@ -44,7 +44,7 @@ The YANG data model defined in this document conforms to the Network Management 
 
 Topology collection is a critical use case for the network operators because the network topology is an abstract representation of the physical nodes, links and network interconnections. Network  planning processes requires that the network resources are placed to meet the traffic demands requirements not just in terms of bandwidth or delay, but also for failure scenarios. Network operators does the network planning process as an offline process, which obtains the information not directly from the network, but from inventory or template information. The main reason for this process was that there was a lack of a dynamic and programmatic interfaces that can allow the planning tools to obtain such information.
 
-Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation changed, because network operators can use an API with dynamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Open Source Path First (OSPF) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
+Thanks to the definition of the ietf-network model in {{!RFC8345}} this situation has changed, because network operators can use an API with dynamic topological information. On top of the work in {{!RFC8345}}, {{!RFC8346}} and {{!RFC8944}} extends the generic network and network topology data models with topology attributes that are specific to Layer 3 and Layer 2. However, there is not any model that exposes Intermediate System to Intermediate System (ISIS) information. This information is required in the IP/MPLS planning process to properly assess the required network resources to meet the traffic demands in normal and failure scenarios. 
 
 The main objective of this model is to represent most relevant ISIS topology attributes.
 
